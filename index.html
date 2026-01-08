@@ -1,0 +1,335 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Sreevan - Portfolio</title>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header with AI-themed background */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://media.istockphoto.com/id/1470617656/vector/ai-artificial-intelligence-chipset-on-circuit-board-in-futuristic-concept-suitable-for.jpg?s=612x612&w=0&k=20&c=_wC-pphyNI2muaUHG4N9JuYXxJEMDuzx56Dvzr8ZDUk=') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 120px 20px 100px;
+        }
+        header h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.6em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover {
+            color: #00c6ff;
+        }
+
+        /* Navigation */
+        nav {
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 18px 0;
+        }
+        nav ul li {
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1em;
+            position: relative;
+            transition: color 0.3s;
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -8px;
+            left: 0;
+            background: #007bff;
+            transition: width 0.4s ease;
+        }
+        nav ul li a:hover {
+            color: #007bff;
+        }
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+            background: white;
+            margin: 40px 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        section h2 {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #007bff;
+            font-size: 2.6em;
+            font-weight: 600;
+            position: relative;
+        }
+        section h2::after {
+            content: '';
+            width: 100px;
+            height: 5px;
+            background: #007bff;
+            display: block;
+            margin: 20px auto 0;
+            border-radius: 3px;
+        }
+
+        /* Images */
+        .section-img {
+            display: block;
+            max-width: 400px;
+            margin: 30px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+        .section-img:hover {
+            transform: scale(1.05);
+        }
+        .badge-img {
+            max-width: 200px;
+        }
+
+        /* Lists */
+        ul {
+            max-width: 800px;
+            margin: 20px auto;
+            list-style: none;
+        }
+        ul li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1em;
+        }
+        ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        /* Project Card */
+        .project-card {
+            background: #f0f8ff;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 5px 20px rgba(0,123,255,0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #333;
+            color: white;
+            font-size: 1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5em; }
+            header p { font-size: 1.3em; }
+            nav ul { flex-direction: column; }
+            nav ul li { margin: 10px 0; }
+            section h2 { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Sattiraju Krishna Sreevan</h1>
+            <p>B.Tech Student in Computer Science & Engineering (AI & ML)</p>
+            <div class="contact-info">
+                <a href="mailto:krishnasreevan2786@gmail.com">krishnasreevan2786@gmail.com</a> |
+                <a href="tel:+917981045602">+91 7981045602</a> |
+                <a href="https://www.linkedin.com/in/krishna-sreevan/" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#activities">Activities</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="summary" class="visible">
+        <div class="container">
+            <h2>Professional Summary</h2>
+            <p style="max-width: 900px; margin: 0 auto; font-size: 1.1em;">
+                B.Tech third-year student in Computer Science and Engineering (Artificial Intelligence & Machine Learning) at Vaagdevi College of Engineering, with a strong foundation in programming, data-driven problem solving, and core computer science principles. Passionate about leveraging AI/ML technologies to develop innovative and efficient solutions. Demonstrates quick learning ability, analytical thinking, and a proactive approach toward skill development. Seeking opportunities to apply academic knowledge in real-world projects and contribute effectively in a dynamic technical environment.
+            </p>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2>Education Details</h2>
+            <p style="text-align: center; font-size: 1.1em;"><strong>Bachelor of Technology (B.Tech)</strong><br>
+            Computer Science and Engineering (Artificial Intelligence & Machine Learning)<br>
+            Vaagdevi College of Engineering<br>
+            Currently pursuing – 3rd Year</p>
+            <p style="text-align: center; font-size: 1.1em;"><strong>Board of Intermediate Education</strong><br>
+            Meluha Junior College<br>
+            Completed</p>
+            <p style="text-align: center; font-size: 1.1em;"><strong>Secondary School Certificate (SSC)</strong><br>
+            SR N.H.S<br>
+            Completed</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <p style="text-align: center; font-size: 1.3em; margin-bottom: 20px;"><strong>Academic Project (RTRP)</strong><br>
+                Price Negotiation Chatbot for E-Commerce Website</p>
+                <img src="https://www.researchgate.net/publication/364518185/figure/fig2/AS:11431281165475608@1686029662428/Basic-working-of-Negotiation-Bot.png" alt="Price Negotiation Chatbot Illustration" class="section-img">
+                <ul>
+                    <li>Designed and developed an AI-powered price negotiation chatbot to enhance user engagement on e-commerce platforms.</li>
+                    <li>Implemented conversational logic to simulate real-time price bargaining between customers and the system.</li>
+                    <li>Utilized Natural Language Processing (NLP) concepts to understand user intent and respond dynamically.</li>
+                    <li>Improved customer interaction experience by providing personalized and interactive price negotiation features.</li>
+                    <li>Gained hands-on experience in chatbot development, AI/ML concepts, and real-world problem-solving.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <img src="https://1000logos.net/wp-content/uploads/2020/08/Python-Logo.png" alt="Python Logo" class="section-img">
+            <p style="text-align: center; font-weight: 600; margin: 20px 0;">Technical Skills</p>
+            <ul>
+                <li>Programming Language: Python</li>
+                <li>Familiar with fundamental programming concepts including variables, data types, conditional statements, loops, and functions</li>
+                <li>Basic understanding of problem-solving and logical thinking using Python</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2>Certifications</h2>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;">
+                <img src="https://pages.awscloud.com/rs/112-TZM-766/images/2024_Cert-Badge_Cloud-Practitioner_188x140.png?version=0" alt="AWS Cloud Practitioner Badge" class="section-img badge-img">
+                <img src="https://thumbs.dreamstime.com/b/ultra-hd-abstract-bitcoin-crypto-currency-blockchain-technology-world-map-background-illustration-global-106043487.jpg" alt="Blockchain Illustration" class="section-img badge-img">
+            </div>
+            <ul>
+                <li>Amazon Web Services (AWS): Completed Free Cloud Practitioner Course (Cloud Computing Fundamentals)</li>
+                <li>Microsoft: Completed Free Cloud Fundamentals Course</li>
+                <li>Blockchain Technology: Certified in Hashgraph Blockchain Technology</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="activities">
+        <div class="container">
+            <h2>Extra Curricular Activities</h2>
+            <img src="https://www.shutterstock.com/image-vector/serious-students-showing-leadership-boys-600nw-2646349161.jpg" alt="Class Representative Illustration" class="section-img">
+            <p style="text-align: center; font-size: 1.2em;">Class Representative (Sept 2023 – Present)</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Sattiraju Krishna Sreevan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Fade-in on scroll
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+```
